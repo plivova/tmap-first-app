@@ -14,6 +14,9 @@
 		088F7E2A2B9A3C570032D721 /* FirstAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088F7E292B9A3C570032D721 /* FirstAppTests.swift */; };
 		088F7E342B9A3C570032D721 /* FirstAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088F7E332B9A3C570032D721 /* FirstAppUITests.swift */; };
 		088F7E362B9A3C570032D721 /* FirstAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088F7E352B9A3C570032D721 /* FirstAppUITestsLaunchTests.swift */; };
+		088F7E432B9AF2D40032D721 /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088F7E422B9AF2D40032D721 /* CreateAccountView.swift */; };
+		088F7E452B9AFEB30032D721 /* iOSCheckboxToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088F7E442B9AFEB30032D721 /* iOSCheckboxToggleStyle.swift */; };
+		088F7E472B9B024B0032D721 /* UserInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088F7E462B9B024B0032D721 /* UserInformationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		088F7E2F2B9A3C570032D721 /* FirstAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FirstAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		088F7E332B9A3C570032D721 /* FirstAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstAppUITests.swift; sourceTree = "<group>"; };
 		088F7E352B9A3C570032D721 /* FirstAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		088F7E422B9AF2D40032D721 /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
+		088F7E442B9AFEB30032D721 /* iOSCheckboxToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSCheckboxToggleStyle.swift; sourceTree = "<group>"; };
+		088F7E462B9B024B0032D721 /* UserInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +102,9 @@
 			children = (
 				088F7E182B9A3C550032D721 /* FirstAppApp.swift */,
 				088F7E1A2B9A3C550032D721 /* ContentView.swift */,
+				088F7E422B9AF2D40032D721 /* CreateAccountView.swift */,
+				088F7E462B9B024B0032D721 /* UserInformationView.swift */,
+				088F7E442B9AFEB30032D721 /* iOSCheckboxToggleStyle.swift */,
 				088F7E1C2B9A3C570032D721 /* Assets.xcassets */,
 				088F7E1E2B9A3C570032D721 /* Preview Content */,
 			);
@@ -257,7 +266,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				088F7E452B9AFEB30032D721 /* iOSCheckboxToggleStyle.swift in Sources */,
+				088F7E432B9AF2D40032D721 /* CreateAccountView.swift in Sources */,
 				088F7E1B2B9A3C550032D721 /* ContentView.swift in Sources */,
+				088F7E472B9B024B0032D721 /* UserInformationView.swift in Sources */,
 				088F7E192B9A3C550032D721 /* FirstAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
