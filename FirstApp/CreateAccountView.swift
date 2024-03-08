@@ -11,6 +11,7 @@ struct CreateAccountView: View {
     @State var personName: String = ""
     @State var personBirthDate: Date = Date()
     @State var checked: Bool = false
+    @State private var showRules = false
     
     var body: some View {
         VStack {
@@ -24,7 +25,15 @@ struct CreateAccountView: View {
                     }
                     .toggleStyle(CheckboxToggleStyle())
                     
-                    Text("I agree with everything")
+                    HStack {
+                        Text("I agree with the")
+                        Button("club rules") {
+                            showRules = true
+                        }
+                        
+                        
+                        
+                    }
                 }
                 
                 NavigationLink("Create an account") {
@@ -36,6 +45,11 @@ struct CreateAccountView: View {
             }
         }
         .padding(.vertical, 30)
+        
+        .sheet(isPresented: $showRules) {
+            RulesPopupView()
+                .presentationDetents([.medium, .large])
+        }
         
     }
     
@@ -75,6 +89,30 @@ private extension CreateAccountView {
             
         }
         
+    }
+}
+
+private extension CreateAccountView {
+    struct RulesPopupView: View {
+        var body: some View {
+            VStack {
+                HStack {
+                    HeartIcon()
+                    Text("Girlie club rules").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    HeartIcon()
+                }
+                .padding(.bottom, 30)
+                .padding(.top, 40)
+                
+                VStack(alignment: .leading, spacing: 16) {
+                    Text("1. Always be kind and lift up one another")
+                    Text("2. Wear that cute outfit")
+                    Text("3. Tear down the patriarchy")
+                    Text("4. Send each other pics of every cute puppy you find")
+                }
+                Spacer()
+            }
+        }
     }
 }
 
