@@ -12,9 +12,9 @@ struct ContentView: View {
         NavigationView {
             VStack {
                 HStack {
-                    heart()
+                    HeartIcon()
                     Text("hey girlie!")
-                    heart()
+                    HeartIcon()
                 }
                     .font(.title3)
                 NavigationLink("Join the girlies!") {
@@ -30,16 +30,7 @@ struct ContentView: View {
     }
 }
 
-// MARK: Components
 
-private extension ContentView {
-    func heart() -> some View {
-        Image(systemName: "heart")
-            .imageScale(.large)
-            .foregroundStyle(.tint)
-            .tint(Color.primaryGorgeousPink)
-    }
-}
 
 #Preview {
     ContentView()

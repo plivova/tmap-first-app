@@ -16,14 +16,26 @@ struct CreateAccountView: View {
         VStack {
             form()
             
-            NavigationLink("Create an account") {
-                UserInformationView()
-            }
-            .buttonStyle(.borderedProminent)
-            .tint(Color.primaryGorgeousPink)
-            .padding(.top, 50)
+            Spacer()
             
+            VStack(spacing: 16) {
+                HStack {
+                    Toggle(isOn: $checked) {
+                    }
+                    .toggleStyle(CheckboxToggleStyle())
+                    
+                    Text("I agree with everything")
+                }
+                
+                NavigationLink("Create an account") {
+                    UserInformationView(name: personName, birthday: personBirthDate)
+                }
+                .buttonStyle(.borderedProminent)
+                .tint(Color.primaryGorgeousPink)
+                
+            }
         }
+        .padding(.vertical, 30)
         
     }
     
@@ -43,35 +55,24 @@ private extension CreateAccountView {
             }
             .padding(.horizontal, 20)
             
-            TextField("Name", text: $personName)
+            TextField("Type your gorgeous name here", text: $personName)
                 .textFieldStyle(.roundedBorder)
                 .padding(.horizontal, 20)
                 .padding(.bottom, 20)
             
-            HStack {
+            HStack{
                 Image(systemName: "birthday.cake")
                     .imageScale(.large)
                     .foregroundStyle(.tint)
                     .tint(Color.primaryGorgeousPink)
                 
                 Text("Date of birth:")
-            }
-            .padding(.horizontal, 20)
-            
-            DatePicker("", selection: $personBirthDate, displayedComponents: [.date])
-                .padding(.trailing, 20)
-                .padding(.bottom, 20)
-            
-            
-            HStack {
-                Toggle(isOn: $checked) {
-                }
-                .toggleStyle(iOSCheckboxToggleStyle())
                 
-                Text("I agree with everything")
+                DatePicker("", selection: $personBirthDate, displayedComponents: [.date])
+                    .padding(.trailing, 20)
             }
             .padding(.horizontal, 20)
-            .padding(.top, 20)
+            
         }
         
     }

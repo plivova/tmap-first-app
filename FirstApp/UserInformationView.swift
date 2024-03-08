@@ -8,11 +8,36 @@
 import SwiftUI
 
 struct UserInformationView: View {
+    let name: String
+    let birthday: Date
+    
+    var dateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US")
+        dateFormatter.setLocalizedDateFormatFromTemplate("MMMMd")
+        return dateFormatter
+    } ()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            HStack {
+                HeartIcon()
+                Text("Hello, \(name)!")
+                    .font(.title)
+                HeartIcon()
+            }
+            
+            VStack {
+                Text("You set your birthday to \(dateFormatter.string(from: birthday)).")
+                Text("Celebrate with all the girlies!")
+            }
+            .padding()
+
+        }
+        .padding()
     }
 }
 
 #Preview {
-    UserInformationView()
+    UserInformationView(name: "Barbie", birthday: Date())
 }
