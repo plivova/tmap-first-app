@@ -10,8 +10,11 @@ import SwiftUI
 struct CreateAccountView: View {
     @State var personName: String = ""
     @State var personBirthDate: Date = Date()
-    @State var checked: Bool = false
+    @State var checked = false
     @State private var showRules = false
+    @State private var validForm = false
+    @State private var entranceReady = false
+
     
     var body: some View {
         VStack {
@@ -30,29 +33,28 @@ struct CreateAccountView: View {
                         Button("club rules") {
                             showRules = true
                         }
-                        
-                        
-                        
                     }
                 }
                 
-                NavigationLink("Create an account") {
-                    UserInformationView(name: personName, birthday: personBirthDate)
+                Button("Create an account") {
+                    entranceReady = true
                 }
                 .buttonStyle(.borderedProminent)
                 .tint(Color.primaryGorgeousPink)
-                
+                .disabled(!validForm)
             }
         }
         .padding(.vertical, 30)
-        
+        .onChange(of: personName, { validate() })
+        .onChange(of: checked, { validate() })
+        .navigationDestination(isPresented: $entranceReady) {
+            UserInformationView(name: personName, birthday: personBirthDate)
+        }
         .sheet(isPresented: $showRules) {
             RulesPopupView()
                 .presentationDetents([.medium, .large])
         }
-        
     }
-    
 }
 
 // MARK: Components
@@ -112,6 +114,18 @@ private extension CreateAccountView {
                 }
                 Spacer()
             }
+        }
+    }
+}
+
+private extension CreateAccountView {
+    func isValid() -> Bool {
+        checked && !personName.isEmpty
+    }
+    
+    func validate() -> Void {
+        if isValid() {
+            validForm = true
         }
     }
 }

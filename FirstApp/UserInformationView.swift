@@ -39,5 +39,5 @@ struct UserInformationView: View {
 }
 
 #Preview {
-    UserInformationView(name: "Barbie", birthday: Date())
+    UserInformationView(name: "beautiful", birthday: Date())
 }

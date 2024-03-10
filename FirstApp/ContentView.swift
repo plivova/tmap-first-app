@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var createAccountPresented = false
+    
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 HStack {
                     HeartIcon()
@@ -17,8 +19,8 @@ struct ContentView: View {
                     HeartIcon()
                 }
                     .font(.title3)
-                NavigationLink("Join the girlies!") {
-                    CreateAccountView()
+                Button("Join the girlies!") {
+                    createAccountPresented = true
                 }
                 .buttonStyle(.borderedProminent)
                 .padding(.top, 50)
@@ -26,6 +28,9 @@ struct ContentView: View {
                 
             }
             .padding()
+            .navigationDestination(isPresented: $createAccountPresented) {
+                CreateAccountView()
+            }
         }
     }
 }
