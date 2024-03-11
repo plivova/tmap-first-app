@@ -44,6 +44,12 @@ struct CreateAccountView: View {
                 .disabled(!validForm)
             }
         }
+        .onAppear {
+            print("CreateAccountView did appear")
+        }
+        .onDisappear {
+            print("CreateAccountView did disappear")
+        }
         .padding(.vertical, 30)
         .onChange(of: personName, { validate() })
         .onChange(of: checked, { validate() })
@@ -113,6 +119,12 @@ private extension CreateAccountView {
                     Text("4. Send each other pics of every cute puppy you find")
                 }
                 Spacer()
+            }
+            .onAppear {
+                print("RulesPopupView did appear")
+            }
+            .onDisappear {
+                print("RulesPopupView did disappear")
             }
         }
     }

@@ -31,6 +31,12 @@ struct ContentView: View {
             .navigationDestination(isPresented: $createAccountPresented) {
                 CreateAccountView()
             }
+        }        
+        .onAppear {
+            print("ContentView did appear")
+        }
+        .onDisappear {
+            print("ContentView did disappear")
         }
     }
 }

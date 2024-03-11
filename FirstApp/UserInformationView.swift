@@ -35,6 +35,12 @@ struct UserInformationView: View {
 
         }
         .padding()
+        .onAppear {
+            print("UserInformationView did appear")
+        }
+        .onDisappear {
+            print("UserInformationView did disappear")
+        }
     }
 }
 
