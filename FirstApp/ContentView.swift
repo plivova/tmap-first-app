@@ -8,16 +8,40 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var createAccountPresented = false
+    
     var body: some View {
-        VStack {
-            Image(systemName: "heart")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("slay girlie!")
+        NavigationStack {
+            VStack {
+                HStack {
+                    HeartIcon()
+                    Text("hey girlie!")
+                    HeartIcon()
+                }
+                    .font(.title3)
+                Button("Join the girlies!") {
+                    createAccountPresented = true
+                }
+                .buttonStyle(.borderedProminent)
+                .padding(.top, 50)
+                .tint(Color.primaryGorgeousPink)
+                
+            }
+            .padding()
+            .navigationDestination(isPresented: $createAccountPresented) {
+                CreateAccountView()
+            }
+        }        
+        .onAppear {
+            print("ContentView did appear")
         }
-        .padding()
+        .onDisappear {
+            print("ContentView did disappear")
+        }
     }
 }
+
+
 
 #Preview {
     ContentView()
